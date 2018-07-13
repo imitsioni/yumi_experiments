@@ -20,7 +20,7 @@ right_arm:
   gripping_frame: yumi_link_7_r
   has_ft_sensor: true
   sensor_frame: optodaq_r_sensor_link
-  sensor_topic: /yumi/optodaq_r/ft_compensated
+  sensor_topic: /wrench
   sensor_calib:
     data: [1.0, 0, 0, 0, 0, 0,
            0, 1.0, 0, 0, 0, 0,

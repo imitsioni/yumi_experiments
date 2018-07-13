@@ -7,9 +7,10 @@ find_package(
   actionlib
   geometry_msgs
   actionlib_msgs
-  yumi_interface
+  controller_interface
   generic_control_toolbox
   folding_assembly_controller
+  pluginlib
 )
 
 add_definitions(-std=c++11)
@@ -27,7 +28,7 @@ generate_messages(
 )
 
 catkin_package(
-  CATKIN_DEPENDS rospy actionlib actionlib_msgs folding_assembly_controller yumi_interface generic_control_toolbox geometry_msgs
+  CATKIN_DEPENDS rospy actionlib actionlib_msgs folding_assembly_controller  controller_interface generic_control_toolbox geometry_msgs
   INCLUDE_DIRS include
   LIBRARIES
 )
@@ -48,3 +49,12 @@ add_dependencies(admittance_action_node ${catkin_EXPORTED_TARGETS} ${PROJECT_NAM
 add_executable(sensor_calibration_action_node src/sensor_calibration_action_node.cpp src/sensor_calibration_controller.cpp)
 target_link_libraries(sensor_calibration_action_node ${catkin_LIBRARIES})
 add_dependencies(sensor_calibration_action_node ${catkin_EXPORTED_TARGETS} ${PROJECT_NAME}_gencfg)
+
+add_library(admittance_ros src/admittance_ros.cpp)
+target_link_libraries(admittance_ros ${catkin_LIBRARIES})
+
+add_executable(testing_admittance src/testing_admittance.cpp)
+target_link_libraries(testing_admittance ${catkin_LIBRARIES})
+
+add_library(simple_controller src/simple_controller.cpp)
+target_link_libraries(simple_controller ${catkin_LIBRARIES})

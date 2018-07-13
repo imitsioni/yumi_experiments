@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<library path="lib/lib_yumi_experiments">
+
+  <class type="simple_controller::SimpleController" base_class_type="controller_interface::ControllerBase">
+    <description>
+      A plugin for a simple PD-controller.
+    </description>
+  </class>
+
+
+
+</library>

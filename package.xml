@@ -15,4 +15,10 @@
   <depend>yumi_interface</depend>
   <depend>generic_control_toolbox</depend>
   <depend>folding_assembly_controller</depend>
+  <depend>controller_interface</depend>
+  <depend>pluginlib</depend>
+
+  <export>
+    <controller_interface plugin="${prefix}/plugins.xml"/>
+  </export>
 </package>
